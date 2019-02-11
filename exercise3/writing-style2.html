@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Yo! Yo! Yo!</title>
+
+
+
+    <link rel="stylesheet" href="../assets/stylesheet.css" type="text/css" charset="utf-8" />
+
+<style>
+  /* demo styles
+  --------------------------------------------- */
+
+  body {
+    font-family: 'impact_nieuw2016_italic';
+    font: 120% / 1.5 Arial;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1{
+    font-family: 'Arial';
+    font-weight: bold;
+    font-size:30px;
+    margin-bottom: 1.5em;
+  }
+
+  p {
+    margin-bottom: 1.5em;
+    font-family:'arial';
+    font-size: 17px;
+  }
+
+  body > svg {
+    display: none;
+  }
+
+
+  /* demo nav bar
+  --------------------------------------------- */
+
+  .nav {
+    position: fixed;
+    z-index: 100;
+    bottom: 1em;
+    padding: 1em 5em 0 5em;
+    width: 100%;
+    display: none;
+    margin: auto;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .nav li {
+    flex: 1;
+    display: inline-block;
+    list-style: none;
+    margin: .5em;
+  }
+  .nav a {
+    display: block;
+    padding: .5em 1em;
+    color: #fff;
+    border-radius: 3px;
+    background: rgba(0,0,0,.6);
+    text-align: center;
+  }
+  .nav a:not(:hover) {
+    text-decoration: none;
+  }
+
+
+  /* slide layout
+  --------------------------------------------- */
+
+  .slide {
+    position: relative;
+    padding: 8% 0;
+  }
+  .slide__content {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .slide__text, .slide__image {
+    padding: 8%;
+  }
+  .slide__image svg {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    margin: auto;
+  }
+  .slide__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  /* slide backgrounds */
+
+  #slide-1 .slide__bg {
+    background-color:yellow;
+  }
+  #slide-2 .slide__bg {
+    background-color:coral;
+  }
+  #slide-3 .slide__bg {
+    background-color:yellow;
+  }
+  #slide-4 .slide__bg {
+    background-color:coral;
+  }
+  #slide-5 .slide__bg {
+      background-color:yellow;
+  }
+  #slide-6 .slide__bg {
+      background-color:coral;
+  }
+
+
+  /* misc
+  --------------------------------------------- */
+
+  .demo__info {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    font-size: 80%;
+    text-align: center;
+    background: rgba(255,255,255,.5);
+    padding: 0.5em;
+    z-index: 100;
+  }
+
+
+  /* Large screen layout
+  --------------------------------------------- */
+
+  @media screen and (min-width: 45em) {
+    .slide__content {
+      max-width:1000px;
+      margin-left:auto;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+    }
+    .slide__image, .slide__text {
+      max-width:1000px;
+      align:center;
+      padding: 3%;
+      -webkit-flex: 1;
+      flex: 1;
+    }
+    .slide:nth-child(2n) .slide__text {
+      -webkit-order: 1;
+      order: 1;
+    }
+    .nav {
+      display: flex;
+    }
+    /* horizontal scroll styles */
+    html, body {
+      height: 100%;
+    }
+    .slides {
+      white-space: nowrap;
+      height: 100%;
+    }
+    .slide {
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      vertical-align: middle;
+      white-space: normal;
+      margin-right:-.3em;
+    }
+    .slide__content {
+      height: 100%;
+    }
+
+    /* parallax */
+    @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
+      html, body {
+        overflow: hidden;
+      }
+      body {
+        transform: translateZ(0px); /* Fix paint issues in Edge && Safari H/W acceleration */
+      }
+      .slides {
+        position: absolute;
+        overflow-x: auto;
+        overflow-y: hidden;
+        perspective: 300px;
+        scroll-behavior: smooth;
+        width: 100%;
+      }
+      .slide, .slide__content {
+        transform-style: preserve-3d;
+      }
+      .slide__text {
+        transform: translateZ(60px) scale(.8);
+        transform-origin: 100% 50%;
+      }
+      .slide:nth-child(2n) .slide__image {
+        transform: translateZ(100px) scale(.67);
+        transform-origin: 100% 50%;
+      }
+      .slide:nth-child(2n) .slide__text {
+        transform-origin: 0% 50%;
+      }
+      .slide:nth-child(2n) .slide__bg {
+        transform: translateZ(59px) scale(.85);
+      }
+      .slide:nth-child(2n+1):not(:first-child) .slide__bg {
+        left: -50%;
+      }
+      .slide:nth-child(2n+1):not(:last-child) .slide__bg {
+        right: -50%;
+      }
+      .slide:nth-child(2n) {
+        z-index: 1; /* ensure slides overlay correctly */
+      }
+    }
+  }
+</style>
+</head>
+
+<body>
+  <!-- svg is defined here because of a Safari bug with <use> -->
+  <svg>
+    <defs>
+      <g id="p">
+        <path opacity=".2" d="M0 2h252s-3.3 40.7-2.7 128.3C249 216 252 272 252 272s-88-2-124.3-2C91.3 270 0 272 0 272V0z"/><path fill="#f4f3f1" d="M0 0h248v270H0z"/><path fill="#4f5150" d="M8 10h233v203H8z"/>
+      </g>
+      <g id="polaroid">
+        <use xlink:href="#p" transform="rotate(15)" x="175" y="50"/>
+        <use xlink:href="#p" transform="rotate(-5)" x="5" y="25"/>
+      </g>
+    </defs>
+  </svg>
+
+  <nav>
+    <ul class="nav">
+      <li><a href="#slide-1">Home</a></li>
+      <li><a href="#slide-2">Introduction</a></li>
+      <li><a href="#slide-3">Preliminary Study</a></li>
+      <li><a href="#slide-4">Main Study</a></li>
+      <li><a href="#slide-5">Discussion</a></li>
+      <li><a href="#slide-6">Conclusion</a></li>
+    </ul>
+  </nav>
+
+  <div class="slides">
+    <div class="slide" id="slide-1">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <div class="slide__text">
+          <h1 id="slide-1-title">Yo!: Enriching Emotional Quality of Single-Button Messengers through Kinetic Typography</h1>
+
+          Minhwan Kim, Kyungah Choi, Hyeon-Jeong Suk
+          <br> Daejeon, Republic of Korea
+          <br> {minhwan.kim, cka0116, color}@kaist.ac.kr
+          <br>
+
+
+<br>
+<hr>
+<br>
+          Contents:
+          <br>
+    <ul>
+      <li>
+        <a href="#slide-2">Introduction</a>
+      </li>
+      <li>
+        <a href="#slide-3">Preliminary study</a>
+      </li>
+      <li>
+        <a href="#slide-4">Main study</a>
+      </li>
+      <li>
+        <a href="#slide-5">Discission<br>and future work</a>
+      </li>
+      <li>
+        <a href="#slide-6">Conclusion</a>
+      </li>
+    </ul>
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slide" id="slide-2">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <div class="slide__text">
+          <h1 id="slide-2-title">Introduction</h1>
+          <p>The maturing of technology has led to the relocation of a significant part of interpersonal interaction as instant messaging [9]. It is worthy of close attention that mediated communication tools have shifted from computers and cell phones to smart devices, such as smartphones and smartwatches. Such environmental change has allowed the advent of new ways of communication, and single-button messaging has expanded the possibilities for communication by drastically reducing them. The single- button messenger is an emerging communication application (app) for mobile devices that allows users to exchange limited texts or signals with a single tap. The ‘Yo’ app is a representative single-button messenger that does nothing but send a one-word message, ‘Yo,’ to other users, as shown in Figure 1. The single-button messenger has rapidly become useful as an alternative messenger as we head into the future of wearable devices [2], and a number of similar applications have been subsequently released, such as ‘Hodor,’ ‘Aiyo,’ ‘Dingbel,’ ‘Lo,’ and so forth. </p>
+          <p>However, the single-button messaging application is lacking in a communicational aspect due to its simple functionality. What if users want to say something else? Such questions have led users to use this messenger for a limited purpose, such as an eye-catching notification. Nevertheless, we believe in the potential of this new messaging service, and studies need to be conducted to explore new ways of communication using single-button messaging. In this study, we attempt to embed kinetic typography in single-button messengers.
+</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slide" id="slide-3">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <div class="slide__text">
+          <h1 id="slide-3-title">Preliminary study</h1>
+          <p>The preliminary study aims to extract user-driven macro animations for mobile devices. We recruited four pairs of users for the workshop. A total of eight college students made up of five males and three females participated. Among the participants, two pairs were in a relationship, and the rest were intimate with each other. Participants sat opposite each other and were asked to express six basic emotions, such as happiness, sadness, anger, fear, surprise, and disappointment [10], using tangible letters ‘Y’ and ‘o’ in the dummy smartphone screen, as illustrated in Figure 2. Two letter sets had different textures: silicone for expressing elastic motion and an acrylic plate for expressing rigid motion. During the workshop, participants were allowed to talk freely and encouraged to give feedback to their partner’s animation. The animations designed for each emotion were archived as thumbnails in a sketched form. Ice-breaking exercises were given prior to the workshop, and five minutes were given to each of the six emotions. Including a ten-minute user interview, each workshop took approximately 50 minutes.
+          Fifty animations were designed from the user-participated workshop. However, animations with a morphological alphabet that was specific to ‘Y’ and ‘o’ were eliminated. As a result, eight types of macro animations were extracted and were given appropriate names, as shown in Figure 3. Eight animation types were then classified into four groups: The first group is composed of animations with deformation of the original text in three different stretching directions (see Figure 3(a)). The second group consists of vibrating animation (see Figure 3(b)). The third group is composed of animations with a translation in two different motion paths (see Figure 3(c)). Finally, the last group consists of rotating animations in two different rotation axes (see Figure 3(d)). Despite the different participants involved, interestingly, several animations were replicated. For example, ‘flopping’ animation type was repeatedly used to express disappointment. The ‘jumping’ animation type was frequently used to express happiness. This implies that there are stereotypes of animation that are strongly tied to specific emotions. On the other hand, some animation types were controversial in use among participants. </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" id="slide-4">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <div class="slide__text">
+          <h1 id="slide-4-title">Main Study</h1>
+          <p>The main study aims to investigate the role of kinetic typographical elements—animation type, speed, and dynamics—on enriching emotional quality. In particular, we attempted to identify both the main effects and interaction effects among the kinetic elements. In addition, we intended to propose a set of prescriptive rules for the use of kinetic typography, which in turn can be designed as an ‘emotion presets’ in the messenger interface.
+PROCEDURE
+
+Three kinetic typographical elements were explored in the empirical study: animation type, speed, and dynamics. First, eight macro animation types derived in the preliminary study were adopted as the level of animation type. Second, three levels were defined for speed: ‘slow,’ ‘moderate,’ and ‘fast,’ according to the play time of the animation. The ‘slow’ level had five times longer playtime than the ‘fast’ level, where each level was designed in an equidistant interval. Lastly, the dynamics were divided into three different levels to explore the activeness of animations. For animation types with deformation (Figure 3(a)) or translation (Figure 3(c)), the level of the dynamic is defined by the space covered by the text. On the other hand, for animation types with vibration (Figure 3(b)) or rotation (Figure 3(d)), the levels were defined with the motion range, such as its rotation angle. In order to reduce the number of stimuli, while minimizing the loss of measuring the effect, we adopted an orthogonal design. As a result, 31 profiles, including four holdout profile cards, were composed out of all 72 (8 × 3 × 3) combinations. Including a text without any effects, a total of 32 animated texts were designed and created in Adobe After Effects CS6, which are available at https://vimeo.com/152108052. A total of 20 subjects consisting of eleven males and nine females participated, and their age ranged from 21 to 32 (M = 26.33, SD = 5.67). The animation sets were displayed on a smartphone (iPhone 6s) in order to simulate an instant messaging application in smart mobile devices. Participants were asked to assess six emotional qualities of the 31 animated texts using a seven-point Likert scale. In addition, the responses were recorded in the Affect Grid [8].</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" id="slide-5">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <div class="slide__text">
+          <h1 id="slide-5-title">Discission and future work</h1>
+          <p> We performed conjoint analysis to identify the elements that have a dominant effect, as shown in Table 1. The relative importance was extracted for each of the 20 participants to perform repeated measures ANOVA. The result indicated that ‘animation type’ plays the most important role in conveying emotions across eight dependent variables (p < .05). The importance between ‘speed’ and ‘dynamics’ was not significantly different, except for the ‘happiness’ emotion (t(19) = 2.95, p < .05). Although the importance of the ‘animation type’ was always biggest among three typographical elements, its relative importance was significantly different among eight measurements (F(7, 133) = 8.27, p < .05). The ‘animation type’ played a relatively less important role in expressing ‘surprise’ (49.01%) and ‘energy’ (45.72%). It was interesting to note that, however, the importance of the ‘dynamics’ element was biggest in expressing these emotions (F(7, 133) = 6.74, p < .05). There was no significant difference in ‘speed’ elements among eight measurements (F(7, 133) = 2.02, p = .57).
+
+</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" id="slide-6">
+      <div class="slide__bg"></div>
+      <div class="slide__content">
+        <div class="slide__text">
+          <h1 id="slide-6-title">Conclusion</h1>
+          <p>In this study, we explored the influence of adding kinetic typography onto the single-button messenger to enrich the communicational aspects by conducting a series of two complementary studies. From the preliminary study, eight macro animations were created by users and adopted for evaluation in a main subsequent study. From the main study, we found that the ‘animation type’ plays the most important role in conveying emotional quality among three kinetic typographical elements. Besides the animation type, we observed that the intervention of speed and dynamics could act as an ‘amplifier’ or a ‘shunt switch,’ depending on the animation type. The findings in this paper are expected to strengthen the potential value of the single- button messenger and expand its usage.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
