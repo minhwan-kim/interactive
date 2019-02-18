@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>CSS Still Life 2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="canvas3.css">
+
+	<style>
+		.canvas {
+			/* if you want to change the background of your canvas, do it here */
+			background: #e9e3d5;
+		}
+
+		#zen {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 160px;
+			left: 250px;
+			border-top-left-radius: 8%;
+			border-bottom-left-radius: 24%;
+			border-top-right-radius: 8%;
+			border-bottom-right-radius: 24%;
+
+			opacity: 0.6;
+
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d7e6ef+23,43627c+100 */
+			background: #d7e6ef;
+			/* Old browsers */
+			background: -moz-linear-gradient(left, #d7e6ef 23%, #43627c 100%);
+			/* FF3.6-15 */
+			background: -webkit-linear-gradient(left, #d7e6ef 23%, #43627c 100%);
+			/* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, #d7e6ef 23%, #43627c 100%);
+			/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d7e6ef', endColorstr='#43627c', GradientType=1);
+			/* IE6-9 */
+
+transform: rotate(90deg);
+
+			transition: 16s box-shadow ease-out;
+			-webkit-transition: 16s box-shadow ease-out;
+			-moz-transition: 16s box-shadow ease-out;
+			-o-transition: 16s box-shadow ease-out;
+
+
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: rubberBand;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+
+		}
+
+
+		#zen:hover {
+		  box-shadow: 0 0  150px 225px rgba(138, 147, 152, 1);
+		}
+
+
+
+
+		@-webkit-keyframes rubberBand {
+		  from {
+		    -webkit-transform: scale3d(1, 1, 1);
+		    transform: scale3d(1, 1, 1);
+		  }
+
+		  30% {
+		    -webkit-transform: scale3d(1.25, 0.75, 1);
+		    transform: scale3d(1.25, 0.75, 1);
+		  }
+
+		  40% {
+		    -webkit-transform: scale3d(0.75, 1.25, 1);
+		    transform: scale3d(0.75, 1.25, 1);
+		  }
+
+		  50% {
+		    -webkit-transform: scale3d(1.15, 0.85, 1);
+		    transform: scale3d(1.15, 0.85, 1);
+		  }
+
+		  65% {
+		    -webkit-transform: scale3d(0.95, 1.05, 1);
+		    transform: scale3d(0.95, 1.05, 1);
+		  }
+
+		  75% {
+		    -webkit-transform: scale3d(1.05, 0.95, 1);
+		    transform: scale3d(1.05, 0.95, 1);
+		  }
+
+		  to {
+		    -webkit-transform: scale3d(1, 1, 1);
+		    transform: scale3d(1, 1, 1);
+		  }
+		}
+
+		@keyframes rubberBand {
+		  from {
+		    -webkit-transform: scale3d(1, 1, 1);
+		    transform: scale3d(1, 1, 1);
+		  }
+
+		  30% {
+		    -webkit-transform: scale3d(1.25, 0.75, 1);
+		    transform: scale3d(1.25, 0.75, 1);
+		  }
+
+		  40% {
+		    -webkit-transform: scale3d(0.75, 1.25, 1);
+		    transform: scale3d(0.75, 1.25, 1);
+		  }
+
+		  50% {
+		    -webkit-transform: scale3d(1.15, 0.85, 1);
+		    transform: scale3d(1.15, 0.85, 1);
+		  }
+
+		  65% {
+		    -webkit-transform: scale3d(0.95, 1.05, 1);
+		    transform: scale3d(0.95, 1.05, 1);
+		  }
+
+		  75% {
+		    -webkit-transform: scale3d(1.05, 0.95, 1);
+		    transform: scale3d(1.05, 0.95, 1);
+		  }
+
+		  to {
+		    -webkit-transform: scale3d(1, 1, 1);
+		    transform: scale3d(1, 1, 1);
+		  }
+		}
+
+		.rubberBand {
+		  -webkit-animation-name: rubberBand;
+		  animation-name: rubberBand;
+		}
+
+
+		@-webkit-keyframes zenish {
+box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.5);
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<!-- this starts the canvas div. do not delete this! -->
+	<div class="canvas">
+		<div id="zen"></div>
+
+
+	</div>
+
+</body>
+
+</html>
