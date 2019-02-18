@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>CSS Still Life 2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="canvas4.css">
+
+	<style>
+		.canvas {
+			/* if you want to change the background of your canvas, do it here */
+			background: #dadadc;
+		}
+
+		#zen {
+
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 330px;
+			left: 250px;
+			border-top-left-radius: 8%;
+			border-bottom-left-radius: 24%;
+			border-top-right-radius: 8%;
+			border-bottom-right-radius: 24%;
+
+			opacity: 0.9;
+
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e3c5c7+23,c94a4a+81,583c39+100 */
+			background: #e3c5c7;
+			/* Old browsers */
+			background: -moz-linear-gradient(left, #e3c5c7 23%, #c94a4a 81%, #583c39 100%);
+			/* FF3.6-15 */
+			background: -webkit-linear-gradient(left, #e3c5c7 23%, #c94a4a 81%, #583c39 100%);
+			/* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to right, #e3c5c7 23%, #c94a4a 81%, #583c39 100%);
+			/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3c5c7', endColorstr='#583c39', GradientType=1);
+			/* IE6-9 */
+
+
+
+
+		}
+
+
+
+		#zen:hover {
+					  -webkit-animation-duration: 0.03s;
+					  -webkit-animation-name: flicker;
+					  -webkit-animation-iteration-count: infinite;
+					  -webkit-animation-direction: alternate;
+					  -webkit-animation-timing-function: ease-in-out;
+
+
+		}
+
+		@-webkit-keyframes flicker {
+
+		  from {
+		    transform: rotate(7deg);
+		    opacity: 1;
+		  }
+
+		  to {
+		    transform: rotate(-7deg);
+		    opacity: .85;
+		  }
+
+		}
+
+
+
+		@-webkit-keyframes zenish {
+			box-shadow: 0 0 50px 25px rgba(255, 255, 255, 0.5);
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<!-- this starts the canvas div. do not delete this! -->
+	<div class="canvas">
+		<div id="zen"></div>
+
+
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>CSS Still Life 2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="canvas.css">
+
+	<style>
+		.canvas {
+			/* if you want to change the background of your canvas, do it here */
+			background: tomato;
+		}
+
+		#lamp {
+			width: 200px;
+			height: 150px;
+			position: absolute;
+			top: 70px;
+			left: 112px;
+		}
+
+		#lamp #orb {
+			width: 100%;
+			height: 100%;
+			background: white;
+			border-radius: 39%;
+			position: absolute;
+
+		}
+
+		#lamp #stand {
+
+			width: 150px;
+			height: 15px;
+			background: grey;
+			position: absolute;
+			bottom: -12px;
+			left: 25px;
+		}
+
+		#lamp #orb:hover {
+			box-shadow: 2px 2px 22px 21px rgba(200, 100, 100, 0.7);
+
+		}
+
+		#glass {
+			height: 160px;
+			width: 100px;
+			position: absolute;
+			top: 40px;
+			left: 462px;
+		}
+
+		#glass #cup{
+			width: 100%;
+			height: 100%;
+			background: white;
+			opacity: 0.4;
+			position: absolute;
+		}
+
+		#glass #top{
+			width: 100%;
+			height: 30%;
+			background: white;
+			opacity: 0.4;
+			position: absolute;
+			top:-15%;
+			border-radius: 100%;
+		}
+
+
+				#glass #bottom{
+					width: 100%;
+					height: 30%;
+					background: white;
+					opacity: 0.4;
+					position: absolute;
+					bottom:-15%;
+					border-radius: 100%;
+				}
+
+
+
+
+		#glass #water{
+			width:95%;
+			left:2px;
+			bottom:4px;
+			height:70px;
+			opacity: 0.8;
+			background: skyblue;
+			position:absolute;
+		}
+
+				#glass #water #top{
+					width:100%;
+					height:40%
+					border-radius: 100%;
+					position:absolute;
+				}
+
+				#glass #water #bottom{
+					width:100%;
+					height:100%;
+					border-radius: 100%;
+					bottom:-15px;
+					background: skyblue;
+					position:absolute;
+				}
+
+		#egg {
+			height: 45px;
+			width: 60px;
+			background: white;
+			border-radius: 50%;
+			position: absolute;
+			left: 580px;
+			top: 140px;
+			z-index: 5;
+			transform: skew(5.9turn, 15deg);
+
+		}
+
+#cats{
+	height:150px;
+	width:120px;
+	left:250px;
+	top:120px;
+	position: absolute;
+}
+
+#cats #dome{
+	width:100%;
+	height: 80%;
+	position: absolute;
+	background: white;
+	opacity: 0.3;
+	border-top-right-radius: 50%;
+	border-top-left-radius: 50%;
+}
+
+#cats #stands{
+	width:100%;
+	height:30px;
+	background: red;
+	position: absolute;
+	bottom:0px;
+}
+
+#cats #stand-bottom{
+	width:100%;
+	height:20px;
+	background: pink;
+	border-radius: 50%;
+	bottom: -15px;
+	position: absolute;
+}
+
+#cats #cat {
+	/* border: 1px solid yellow; */
+	height:85px;
+	width:65px;
+	position: absolute;
+	left:30px;
+	bottom:20px;
+}
+
+#cats #cat #body{
+	width:100%;
+	height: 70%;
+	position: absolute;
+	bottom:0;
+	background: gold;
+	border-top-right-radius: 50%;
+	border-top-left-radius: 50%;
+}
+
+#cats #cat #head{
+	width:100%;
+	height: 40%;
+	position: absolute;
+	top:0;
+	background: gold;
+	border-radius: 50%;
+
+
+  -webkit-animation-duration: 0.33s;
+  -webkit-animation-name: bob;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+
+}
+
+
+@-webkit-keyframes bob {
+
+  from {
+    transform: rotate(3deg);
+    /* opacity: 1; */
+  }
+
+  to {
+    transform: rotate(-3deg);
+    /* opacity: .85; */
+  }
+
+}
+
+
+
+	</style>
+
+</head>
+
+<body>
+
+	<!-- this starts the canvas div. do not delete this! -->
+	<div class="canvas">
+		<div id="egg"></div>
+		<div id="lamp">
+			<div id="orb"></div>
+			<div id="stand"></div>
+		</div>
+
+		<div id="glass">
+			<div id="top"></div>
+				<div id="bottom"></div>
+				<div id="cup"></div>
+			<div id="water">
+				<div id="top"></div>
+							<div id="bottom"></div>
+		</div>
+
+			<!-- this ends the canvas div. do not delete this! -->
+		</div>
+
+		<div id="cats">
+				<div id="dome"></div>
+					<div id="stands"></div>
+					<div id="stands-bottom"></div>
+					<div id="stands-top"></div>
+					<div id="cat">
+						<div id="body"></div>
+						<div id="head"></div>
+					</div>
+
+		</div>
+
+</body>
+
+</html>
