@@ -1,0 +1,243 @@
+body{
+  background: black;
+
+  margin: 0;
+  text-decoration-color: black;
+   min-width: 400px;
+
+}
+
+.box1 {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  display: grid;
+  grid-template-columns: repeat(3, 10fr 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+
+  animation: resize 3000ms ease infinite both;
+}
+
+
+
+@keyframes resize {
+    0% {
+        grid-template-columns: repeat(1, 10fr 1fr);
+    }
+
+    15% {
+        grid-template-columns: repeat(2, 10fr 1fr);
+    }
+
+    25% {
+        grid-template-columns: repeat(3, 10fr 1fr);
+    }
+
+    40% {
+        grid-template-columns: repeat(4, 10fr 1fr);
+    }
+
+    55% {
+        grid-template-columns: repeat(5, 10fr 1fr);
+    }
+
+        70% {
+            grid-template-columns: repeat(6, 10fr 1fr);
+        }
+
+          85% {
+                grid-template-columns: repeat(7, 10fr 1fr);
+            }
+
+                100% {
+                    grid-template-columns: repeat(8, 10fr 1fr);
+                }
+
+}
+
+.box2 {
+  font-size: 22px;
+}
+
+
+.box3 {
+  font-size: 22px;
+}
+
+* {box-sizing: border-box;}
+
+.textbox2{
+  width: auto;
+
+}
+
+.rotate {
+  position: relative;
+  top:0px;
+  left:0px;
+  text-align: center;
+  line-height: 90%;
+  /* align-self:flex-end; */
+  /* margin-bottom: 40px; */
+  font-size: 35px;
+  z-index: 100;
+  transform: rotate(-90deg);
+/* Safari */
+
+}
+
+.wrapper {
+  /* border: 2px solid #f76707; */
+  border-radius: 5px;
+  /* background-color: #fff4e6; */
+  display: grid;
+  grid-template-columns: 200px 1fr 120px;
+
+}
+
+.box {
+  /* border: 2px solid #ffa94d; */
+  border-radius: 5px;
+  /* background-color: #ffd8a8; */
+  padding: 1em;
+  color: #fff30f;
+    font-family: 'Arial';
+    font-weight: bold;
+}
+
+.box1 {
+  grid-column: 2 / 3;
+}
+
+.nested {
+  /* border: 5px solid ##fff; */
+  /* border-radius: 5px; */
+  /* background-color: #fff; */
+  /* padding: 1em; */
+}
+
+
+.gallery__img {
+  width: 70%;
+  height: 1fr/3;
+  object-fit: cover;
+}
+
+.hover06 figure img {
+	-webkit-filter: blur(0px);
+	filter: blur(0px);
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.hover06 figure:hover img {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+
+}
+
+
+
+.hover07 figure img {
+	-webkit-filter: blur(0px);
+	filter: blur(0px);
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.hover07 figure:hover img {
+	-webkit-filter: blur(0px);
+	filter: blur(0px);
+  background: black;
+
+                -webkit-animation:spin 0.1s linear infinite;
+                -moz-animation:spin 0.1s linear infinite;
+                animation:spin 0.1s linear infinite;
+
+
+}
+
+.column {
+	margin: 0;
+	padding: 0;
+}
+
+figure {
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 5px;
+	/* background: #fff; */
+	overflow: hidden;
+
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate3d(0,0,1,360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate3d(0,0,1,360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate3d(0,0,1,360deg); transform:rotate3d(0,0,1,360deg); } }
+
+
+@-moz-keyframes spin2 { 100% { -moz-transform: rotate3d(1,1,0,-360deg); } }
+@-webkit-keyframes spin2 { 100% { -webkit-transform: rotate3d(1,1,0,-360deg); } }
+@keyframes spin2 { 100% { -webkit-transform: rotate3d(1,1,0,-360deg); transform:rotate3d(1,1,0,-360deg); } }
+
+
+@media screen and (max-width: 1000px) {
+  .box1{
+      animation: resize 1000ms ease infinite both;
+  }
+
+  @keyframes resize {
+      0% {
+          grid-template-columns: repeat(1, 10fr 1fr);
+      }
+
+      15% {
+          grid-template-columns: repeat(2, 10fr 1fr);
+      }
+
+      50% {
+          grid-template-columns: repeat(3, 10fr 1fr);
+      }
+
+      100% {
+          grid-template-columns: repeat(4, 10fr 1fr);
+      }
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .box1 {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr 50px);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+
+  .wrapper {
+    /* border: 2px solid #f76707; */
+    border-radius: 5px;
+    /* background-color: #fff4e6; */
+    display: grid;
+    grid-template-columns: 50px 1fr 76px;
+
+  }
+
+  .box2 {
+    font-size: 14px;
+  }
+
+
+  .box3 {
+    font-size: 14px;
+  }
+
+
+  .rotate {
+    font-size: 16px;
+
+  }
+
+}

@@ -1,0 +1,79 @@
+body{
+  background: #e2e2e2;
+  font-family: 'impact_nieuw2016_italic';
+  color:#fff30f;
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+  text-align: center;
+   text-transform: uppercase;
+   line-height: 1.1;
+   background-image: url("assets/bg-noise.gif");
+ background-size: 250px 250px;
+ white-space: normal;
+}
+
+
+.hover06 figure img {
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.hover06 figure:hover img {
+	-webkit-filter: blur(45px);
+	filter: blur(45px);
+
+}
+
+
+a{
+  font-size: 25px;
+}
+
+a:hover{
+  color:#3bff00;
+}
+
+
+
+hr{
+
+}
+
+.exercise{
+  font-size: 15px;
+}
+
+img{
+  width:100%;
+  margin-left: 20px;
+}
+
+.wrapper {
+  /* border: 2px solid #f76707; */
+  border-radius: 5px;
+  /* background-color: #fff4e6; */
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+}
+
+
+h1{
+  font-size: 55px;
+}
+
+h1:hover{
+  color:#3bff00;
+}
+
+
+h2{
+  font-size: 55px;
+}
+
+h2:hover{
+  color:#3bff00;
+}

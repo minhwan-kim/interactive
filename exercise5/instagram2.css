@@ -1,0 +1,34 @@
+.grid-container {
+  display: grid;
+  height: 400px;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 5px;
+  margin-top: 0px;
+  /* background-color: #2196F3; */
+  padding: 0px;
+}
+
+.grid-container > div {
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+
+.gallery__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+
+figure{
+   width:300px; /*container-width*/
+   overflow: hidden; /*hide bounds of image */
+   margin:0; /*reset margin of figure tag*/
+}
+figure img{
+   display:block; /*remove inline-block spaces*/
+}
