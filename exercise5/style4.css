@@ -1,0 +1,224 @@
+body{
+  background: lightgray;
+  margin: 0;
+  text-decoration-color: black;
+   min-width: 400px;
+   background-image: url("../assets/bg-noise.gif");
+ background-size: 250px 250px;
+ white-space: normal;
+
+}
+
+.box1 {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+
+.box2 {
+  font-size: 22px;
+}
+
+
+.box3 {
+  font-size: 22px;
+}
+
+* {box-sizing: border-box;}
+
+.textbox2{
+  width: auto;
+
+}
+
+.rotate {
+  text-align: left;
+  line-height: 90%;
+  align-self: flex-end;
+  margin-bottom: 10px;
+  font-size: 52px;
+
+/* Safari */
+-webkit-transform: rotate(90deg);
+
+/* Firefox */
+-moz-transform: rotate(90deg);
+
+/* IE */
+-ms-transform: rotate(90deg);
+
+/* Opera */
+-o-transform: rotate(90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
+
+.wrapper {
+  /* border: 2px solid #f76707; */
+  border-radius: 5px;
+  /* background-color: #fff4e6; */
+  display: grid;
+  grid-template-columns: 150px 1fr 120px;
+
+}
+
+.box {
+  /* border: 2px solid #ffa94d; */
+  border-radius: 5px;
+  /* background-color: #ffd8a8; */
+  padding: 1em;
+  color: gray;
+    font-family: 'impact_nieuw2016_italic';
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.box1 {
+  grid-column: 2 / 3;
+}
+
+.nested {
+  /* border: 5px solid ##fff; */
+  /* border-radius: 5px; */
+  /* background-color: #fff; */
+  /* padding: 1em; */
+}
+
+
+.gallery__img {
+  width: 100%;
+  height: 1fr/3;
+  object-fit: cover;
+}
+
+.hover07 figure img {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+.hover07 figure:hover img {
+	-webkit-filter: blur(145px);
+	filter: blur(145px);
+
+}
+
+.column {
+	margin: 0;
+	padding: 0;
+}
+
+.spin1{
+
+            -webkit-animation:spin 0s linear infinite;
+            -moz-animation:spin 0s linear infinite;
+            animation:spin 0s linear infinite;
+}
+
+.spin2{
+
+            -webkit-animation:spin2 0s linear infinite;
+            -moz-animation:spin2 0s linear infinite;
+            animation:spin2 0s linear infinite;
+}
+
+figure {
+	width: auto;
+	height: auto;
+	margin: 0;
+	padding: 5px;
+	/* background: #fff; */
+	overflow: hidden;
+
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate3d(0,1,1,360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate3d(0,1,1,360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate3d(0,1,1,360deg); transform:rotate3d(0,1,1,360deg); } }
+
+
+@-moz-keyframes spin2 { 100% { -moz-transform: rotate3d(1,1,0,-360deg); } }
+@-webkit-keyframes spin2 { 100% { -webkit-transform: rotate3d(1,1,0,-360deg); } }
+@keyframes spin2 { 100% { -webkit-transform: rotate3d(1,1,0,-360deg); transform:rotate3d(1,1,0,-360deg); } }
+
+
+@media screen and (max-width: 1030px) {
+  .box1 {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+
+  .spin1{
+
+              -webkit-animation:spin 0.2s linear infinite;
+              -moz-animation:spin 0.2s linear infinite;
+              animation:spin 0.2s linear infinite;
+  }
+
+  .spin2{
+
+              -webkit-animation:spin2 0.2s linear infinite;
+              -moz-animation:spin2 0.2s linear infinite;
+              animation:spin2 0.2s linear infinite;
+  }
+
+  .box {
+    /* border: 2px solid #ffa94d; */
+
+      -webkit-filter: blur(15px);
+      filter: blur(15px);
+  }
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .box1 {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+
+  .wrapper {
+    /* border: 2px solid #f76707; */
+    border-radius: 5px;
+    /* background-color: #fff4e6; */
+    display: grid;
+    grid-template-columns: 50px 1fr 76px;
+
+  }
+
+  .box2 {
+    font-size: 14px;
+  }
+
+
+  .box3 {
+    font-size: 14px;
+  }
+
+
+  .rotate {
+    font-size: 16px;
+
+  }
+
+
+
+}
