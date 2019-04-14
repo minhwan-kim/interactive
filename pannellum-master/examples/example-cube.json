@@ -1,12 +1,12 @@
 {
     "title": "Jordan Pond",
-    
+
     "author": "Matthew Petroff",
-    
-    "preview": "./examplepano-preview.jpg",
-    
+
+    "preview": "./family_blue.jpg",
+
     "type": "cubemap",
-    
+
     "cubeMap": [
         "./examplepanocube0.jpg",
         "./examplepanocube1.jpg",
@@ -15,7 +15,7 @@
         "./examplepanocube4.jpg",
         "./examplepanocube5.jpg"
     ],
-    
+
     "hotSpots": [
         {
             "pitch": -12,
