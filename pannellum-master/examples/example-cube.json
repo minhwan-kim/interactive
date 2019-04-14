@@ -8,10 +8,10 @@
     "type": "cubemap",
 
     "cubeMap": [
-        "./examplepanocube0.jpg",
-        "./examplepanocube1.jpg",
-        "./examplepanocube2.jpg",
-        "./examplepanocube3.jpg",
+        "./family_blue.jpg",
+        "./family_blue.jpg",
+        "./family_blue.jpg",
+        "./family_blue.jpg",
         "./examplepanocube4.jpg",
         "./examplepanocube5.jpg"
     ],
