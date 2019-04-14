@@ -4,18 +4,18 @@
         "firstScene": "pond",
         "sceneFadeDuration": 2000
     },
-    
+
     "scenes": {
         "pondCube": {
             "title": "Jordan Pond (Cube)",
             "type": "cubemap",
             "cubeMap": [
-                "./examplepanocube0.jpg",
-                "./examplepanocube1.jpg",
-                "./examplepanocube2.jpg",
-                "./examplepanocube3.jpg",
-                "./examplepanocube4.jpg",
-                "./examplepanocube5.jpg"
+                "./family_blue.jpg",
+                "./family_blue.jpg",
+                "./family_blue.jpg",
+                "./family_blue.jpg",
+                "./family_blue.jpg",
+                "./family_blue.jpg"
             ],
             "hotSpots": [
                 {
@@ -29,7 +29,7 @@
                     "yaw": -50,
                     "type": "info",
                     "text": "This is a link.",
-                    "URL": "https://github.com/mpetroff/pannellum"
+                    "URL": "family_blue.jpg"
                 },
                 {
                     "pitch": 0,
@@ -43,7 +43,7 @@
 
         "pond": {
             "title": "Jordan Pond",
-            "panorama": "./examplepano.jpg",
+            "panorama": "./family_blue.jpg",
             "hotSpots": [
                 {
                     "pitch": 0,
